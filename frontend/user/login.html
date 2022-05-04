@@ -1,0 +1,63 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport content=" width=device-width, initial-scale="1.0">
+  <link rel="stylesheet" href="/styles/styles.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="module" src="/modules/login.js" defer></script>
+  <script type="module" src="/modules/utils.js"></script>
+  <script src="/components/clouds.js"></script>
+  
+  <title>Login</title>
+  <link rel="icon"
+  href="https://www.kindpng.com/picc/m/107-1076128_transparent-planet-png-planet-vector-png-png-download.png"
+  type="image/x-icon">
+</head>
+
+<body class="login-body">
+  <main>
+    
+    <!-- This is all user login card -->
+    <section class="login-card">
+      <h1>Aether_Ark</h1>
+      <h4>Login</h4>
+      
+      <form id="login-username-form">
+          
+          <div class="form-content">
+            <label>
+              <input name="login-username" type="text" required class="validated-field" id="login-username" placeholder="name" 
+              data-tip="Cannot contain characters \ ' " autofocus>
+            </label>
+          </div>
+          
+          <div class="form-content">
+            <label>
+              <input name="login-email" type="text" required id="login-email" class="validated-field" placeholder="email"
+              data-tip="Cannot contain characters \ ' ">
+            </label>
+          </div>
+          
+          <div><input type="submit" id="login" class="Userbutton" value="Login"></div>
+          
+        </form>
+        <a href="/user/create-acount.html">Create Account</a>
+        
+        <!-- <div>
+          <div id="spin-container">
+            <div class="spin" id="loader"></div>
+            <div class="spin" id="loader2"></div>
+            <div class="spin" id="loader3"></div>
+            <div class="spin" id="loader4"></div>
+            <span id="text">LOADING...</span>
+          </div>
+        </div> -->
+      </section>
+      <!-- end of user login card -->
+  
+      <clouds-component>
+    </clouds-component>
+      
+    </main>
+</body>
+
+</html>

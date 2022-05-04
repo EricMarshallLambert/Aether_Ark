@@ -1,0 +1,60 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport content=" width=device-width, initial-scale="1.0">
+  <link rel="stylesheet" href="/styles/user-home.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/components/header.js" defer></script>
+  <script type="module" src="/modules/utils.js" defer></script>
+  <script type="module" src="/modules/user-home.js" defer></script>
+
+  <title>Home</title>
+  <link rel="icon"
+    href="https://www.kindpng.com/picc/m/107-1076128_transparent-planet-png-planet-vector-png-png-download.png"
+    type="image/x-icon">
+</head>
+
+<body>
+  <header-component></header-component>
+  <main>
+
+    <div id="grid-container">
+      <div>
+        <section id="user-solar-system" class="section-card">
+          <h1>Solarsystems</h1>
+          <p>Select to view in the viewport</p>
+          <ul id="user-solar-list" class="vertical-menu">
+          </ul>
+
+        </section>
+
+        <section id="user-celestial-body" class="section-card">
+          <h1>Celestial Bodies</h1>
+          <p>Select to view in the viewport</p>
+          <ul id="user-body-list" class="vertical-menu">
+          </ul>
+        </section>
+      </div>
+      <div id="user-view-area" class="view-port">
+        <h1>View Port</h1>
+        <canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;">
+        </canvas>
+      </div>
+      <div>
+        <label for="fader">Velocity</label>
+        <input type="range" min="0" max="200" value="50" id="fader" step="1" oninput="outputUpdate(value)">
+        <output for="fader" id="volume">50</output>
+        <script>function outputUpdate(vol) {
+            document.querySelector('#volume').value = vol;
+
+          }
+        </script>
+      <section id="info-section" class="section-card">
+        <p>INFO</p>
+        <ul id="info-list" class="vertical-menu">
+        </ul>
+      </section>
+      </div>
+    </div>
+
+  </main>
+</body>

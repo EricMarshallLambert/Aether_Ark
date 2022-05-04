@@ -1,0 +1,147 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport content=" width=device-width, initial-scale="1.0">
+  <link rel="stylesheet" href="/styles/template copy.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/scripts/celestialBody.js" defer></script>
+  <script src="/components/header.js" defer></script>
+
+  <title>Celestial Bodies</title>
+  <link rel="icon"
+    href="https://www.kindpng.com/picc/m/107-1076128_transparent-planet-png-planet-vector-png-png-download.png"
+    type="image/x-icon">
+</head>
+
+<body>
+  <header-component></header-component>
+
+  <main>
+
+
+    <section id="celestial-body" class="section-card">
+
+      <h1>My Celestial Bodies </h1>
+      <br>
+      <table id="planet-table">
+      </table>
+
+      </br>
+    </section>
+
+
+    <section id="solar-system-edit-area" class="section-card">
+      <h1>Create New Celestial Body</h1>
+      <br>
+      <form class="card-content" id="create-solarSystem-form">
+        <label> Name
+          <input type="text" required class="validated-field" id="solarSystem-name" placeholder="Solar" autofocus>
+        </label>
+        <label> Diameter
+          <input type="text" required class="validated-field" id="solarSystem-name" placeholder="65" autofocus>
+        </label>
+        <label> Mass
+          <input type="text" required class="validated-field" id="solarSystem-name" placeholder="100" autofocus>
+        </label>
+        <label> Composition
+          <input type="text" required class="validated-field" id="solarSystem-name" placeholder="100" autofocus>
+        </label>
+        <label> Composition
+          <select id="myList" onchange="favTutorial()">
+            <option> ---Choose--- </option>
+            <option> SOLAR_SUN </option>
+            <option> RED_GIANT </option>
+            <option> RED_DWARF </option>
+            <option> WHITE_DWARF </option>
+            <option> BLUE_DWARF </option>
+            <option> EARTH_PLANET </option>
+            <option> SUPER_EARTH </option>
+            <option> ICE_GIANT </option>
+            <option> GAS_GIANT </option>
+          </select>
+        </label>
+
+        <input type="submit" id="create" value="Create">
+      </form>
+      <br>
+
+      </br>
+
+      <section id="solar-system-edit-area" class="section-card">
+        <h1>Get 1 Celestial Body</h1>
+
+        <form class="card-content" id="create-solarSystem-form">
+          <label>Celestial Body ID
+            <input type="text" required class="validated-field" id="solarSystem-id" placeholder="12345" autofocus>
+          </label>
+
+          <input type="submit" id="Get" value="Retrieve">
+        </form>
+
+        <br>
+
+        </br>
+
+        <section id="solar-system-edit-area" class="section-card">
+          <h1>Delete Celestial Body</h1>
+
+          <form class="card-content" id="delete-solarSystem-form">
+            <label>Celestial Body ID
+              <input type="text" required class="validated-field" id="solarSystem-id" placeholder="12345" autofocus>
+            </label>
+
+            <input type="submit" id="Get" value="Delete">
+          </form>
+
+          <br>
+
+          </br>
+
+
+          <section id="solar-system-edit-area" class="section-card">
+
+
+            <form action=method="put">
+              <h1>Update Celestial Body</h1>
+              <br>
+              Celestial Body Id:<br>
+              <input type="text" name="username" placeholder="12345">
+              <br><br>
+              New Name:<br>
+              <input type="text" name="email_id" placeholder="Ex: Planet X">
+              <br><br>
+              New Diameter:<br>
+              <input type="text" name="email_id" placeholder="20">
+              <br><br>
+              New Mass:<br>
+              <input type="text" name="email_id" placeholder="Ex: 50">
+              <br><br>
+              New Composition:<br>
+              <select id="myList" onchange="favTutorial()">
+                <option> ---Choose--- </option>
+                <option> SOLAR_SUN </option>
+                <option> RED_GIANT </option>
+                <option> RED_DWARF </option>
+                <option> WHITE_DWARF </option>
+                <option> BLUE_DWARF </option>
+                <option> EARTH_PLANET </option>
+                <option> SUPER_EARTH </option>
+                <option> ICE_GIANT </option>
+                <option> GAS_GIANT </option>
+              </select>
+
+              <br><br>
+
+
+              <button type="submit" formaction="#">
+                Update Celestial Body
+              </button>
+            </form>
+
+          </section>
+
+
+  </main>
+</body>
+
+
+</html>

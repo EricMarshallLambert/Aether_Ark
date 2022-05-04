@@ -1,0 +1,30 @@
+
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    color: #333;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.295);
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  #settings-username-form {
+    align-items: center;
+  }
+
+
+html,
+body {
+  height: 100%;
+}
+
+

@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  color: #333;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.295);
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid rgb(8, 8, 8);
+}
+
+th {
+  background: #1bf1c3;
+}
+
+th,
+td {
+  padding: 6px;
+}

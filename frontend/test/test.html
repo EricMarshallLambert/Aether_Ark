@@ -1,0 +1,67 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport content=" width=device-width, initial-scale="1.0">
+    <link rel="stylesheet" href="test.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="test.js" defer></script>
+    <title>!TEST!</title>
+    <link rel="icon"
+        href="https://www.kindpng.com/picc/m/107-1076128_transparent-planet-png-planet-vector-png-png-download.png"
+        type="image/x-icon">
+</head>
+
+<body class="login-body">
+    <main>
+
+        <!-- This is all user login card -->
+        <div class="login-card">
+            <h1>Aether_Ark</h1>
+            <h4>Login</h4>
+
+            <form id="login-username-form">
+
+                <div class="form-content">
+                    <label>
+                        <input name="login-username" type="text" required class="validated-field" id="login-username" placeholder="name"
+                            data-tip="Cannot contain characters \ ' " autofocus>
+                    </label>
+                </div>
+
+                <div class="form-content">
+                    <label>
+                        <input name="login-email" type="text" required id="login-email" class="email" placeholder="email"
+                            data-tip="Cannot contain characters \ ' ">
+                    </label>
+                </div>
+                <div class="form-content">
+                    <label>
+                        <input name="login-updateEmail" type="text" id="login-updateEmail" class="email" placeholder="new email"
+                            data-tip="Cannot contain characters \ ' ">
+                    </label>
+                </div>
+
+                <div>
+                    <input type="submit" id="login" class="Userbutton" value="Login">
+                    <input type="submit" id="GET" class="Userbutton" value="GET">
+                    <input type="submit" id="POST" class="Userbutton" value="POST">
+                    <input type="submit" id="DELETE" class="Userbutton" value="DELETE">
+                    <input type="submit" id="PUT" class="Userbutton" value="PUT">
+                </div>
+
+            </form>
+        </div>
+
+        <div class="login-card">
+            Request
+            <ul id="request-data"></ul>
+        </div>
+        <div class="login-card">
+            Response
+            <ul id="response-data"></ul>
+        </div>
+
+
+    </main>
+</body>
+
+</html>

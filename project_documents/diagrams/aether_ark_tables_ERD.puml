@@ -1,0 +1,35 @@
+@startuml
+skinparam backgroundcolor grey
+entity UserTable {
+* userId: String
+--
+* name: String
+email: String
+solarSystemIds: List<String>
+celestialBodyIds: List<String>
+}
+entity CelestialBodyTable {
+*celestialBodyId: String
+--
+* name: String
+* mass: Number
+* diameter: Number
+* composition: String
+homeSolarSystems: List<Strings>
+}
+
+entity SolarSystemTable {
+* solarSystemId: String
+--
+* name: String
+celestialBodies: List<CelestialBody>
+distanceFromStar: Map<string, number>
+}
+
+
+UserTable "1 " --{ "0..*" CelestialBodyTable
+UserTable "1 " --{ "0..*" SolarSystemTable
+SolarSystemTable "1 " --{ "0..*" CelestialBodyTable
+CelestialBodyTable "1" --{ "0..*" SolarSystemTable
+
+@enduml

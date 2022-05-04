@@ -1,0 +1,63 @@
+@startuml
+
+actor User
+participant FrontEnd
+participant "API Gateway" as APIGateway
+participant Lambda
+participant GetUserActivity
+participant ModelConverter
+participant UserDao
+participant AetherArkServiceUtils
+database DynamoDB
+
+title Get User
+
+activate User
+User -> FrontEnd : inputs userId
+activate FrontEnd
+FrontEnd -> APIGateway : GET /user/:userId
+APIGateway -> Lambda
+activate Lambda
+Lambda -> GetUserActivity : handleRequest(GetUserRequest)
+activate GetUserActivity
+GetUserActivity -> AetherArkServiceUtils : isValidString(userId)
+alt if userId string invalid
+    GetUserActivity <-- AetherArkServiceUtils : false
+    Lambda <-- GetUserActivity : throw InvalidAttributeValueException
+    APIGateway <-- Lambda
+    FrontEnd <-- APIGateway : 4xx Response
+else otherwise, continue
+end
+
+GetUserActivity -> UserDao : getUser(userId)
+activate UserDao
+UserDao -> DynamoDB : load User
+
+alt if userId not found
+    UserDao <-- DynamoDB : User not found
+    GetUserActivity <-- UserDao : throw UserNotFoundException
+    Lambda <-- GetUserActivity : UserNotFoundException
+    APIGateway <-- Lambda
+    FrontEnd <-- APIGateway : 4xx Response
+else otherwise, continue
+end
+
+UserDao <-- DynamoDB
+GetUserActivity <-- UserDao : User
+deactivate UserDao
+
+GetUserActivity -> ModelConverter : toUserModel(User)
+activate ModelConverter
+GetUserActivity <-- ModelConverter : UserModel
+deactivate ModelConverter
+
+Lambda <-- GetUserActivity : GetUserResponse
+deactivate GetUserActivity
+APIGateway <-- Lambda
+deactivate Lambda
+FrontEnd <-- APIGateway : 200 Response
+User <-- FrontEnd : User Home Screen
+deactivate FrontEnd
+deactivate User
+
+@enduml

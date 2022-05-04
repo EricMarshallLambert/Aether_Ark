@@ -1,0 +1,12 @@
+@startuml
+
+actor User
+participant Website as "Website Update Solar System Page"
+participant UpdateSolarSystemActivity
+database solar_systems
+
+User -> Website : Submit update solar system request
+Website -> UpdateSolarSystemActivity : send update solar system request
+UpdateSolarSystemActivity -> solar_systems : save updated solar system
+
+@enduml

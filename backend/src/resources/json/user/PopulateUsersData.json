@@ -1,0 +1,22 @@
+{
+  "Users": [
+    {
+      "PutRequest": {
+        "Item":{
+          "name" : {
+            "S": "Boy"
+          },
+          "email" : {
+            "S": "email"
+          },
+          "solarSystemIds": {
+            "L": ["1", "2", "3", "4"]
+            },
+          "CelestialBodyIds": {
+            "L" : ["6", "7", "8", "9"]
+          }
+        }
+      }
+    }
+  ]
+}

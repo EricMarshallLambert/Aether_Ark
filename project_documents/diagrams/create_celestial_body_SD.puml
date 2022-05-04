@@ -1,0 +1,60 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+actor User
+participant FrontEnd
+participant "API Gateway" as APIGateway
+participant Lambda
+participant CreateCelestialBodyActivity
+participant ModelConverter
+participant CelestialBodyDao
+participant AetherArkServiceUtils
+database DynamoDB
+
+title Create CelestialBody
+
+activate User
+User -> FrontEnd : inputs parameters
+activate FrontEnd
+FrontEnd -> APIGateway : POST /user/{userId}/celestialBody/
+APIGateway -> Lambda
+activate Lambda
+Lambda -> CreateCelestialBodyActivity : handleRequest(CreateCelestialBodyRequest)
+activate CreateCelestialBodyActivity
+CreateCelestialBodyActivity -> CelestialBodyDao : saveCelestialBody(CelestialBody)
+CreateCelestialBodyActivity -> AetherArkServiceUtils : isValidString(name)
+activate CelestialBodyDao
+alt if name, mass, or diameter invalid
+    CreateCelestialBodyActivity <-- AetherArkServiceUtils : false
+    Lambda <-- CreateCelestialBodyActivity : throw InvalidAttributeValueException
+    APIGateway <-- Lambda
+    FrontEnd <-- APIGateway : 4xx Response
+else otherwise, continue
+end
+
+CreateCelestialBodyActivity -> AetherArkServiceUtils : generateCelestialBodyId()
+CreateCelestialBodyActivity <- AetherArkServiceUtils : new CelestialBody ID
+CreateCelestialBodyActivity -> CreateCelestialBodyActivity : populate CelestialBody object
+CreateCelestialBodyActivity -> CelestialBodyDao : saveCelestialBody(CelestialBody))
+
+CelestialBodyDao -> DynamoDB : save CelestialBody
+CelestialBodyDao <-- DynamoDB
+CreateCelestialBodyActivity <-- CelestialBodyDao : CelestialBody
+deactivate CelestialBodyDao
+
+CreateCelestialBodyActivity -> ModelConverter : toCelestialBodyModel(CelestialBody)
+activate ModelConverter
+CreateCelestialBodyActivity <-- ModelConverter : CelestialBodyModel
+deactivate ModelConverter
+
+Lambda <-- CreateCelestialBodyActivity : CreateCelestialBodyResponse
+deactivate CreateCelestialBodyActivity
+APIGateway <-- Lambda
+deactivate Lambda
+FrontEnd <-- APIGateway : 200 Response
+User <-- FrontEnd : picture of CelestialBody/confirmation
+deactivate FrontEnd
+deactivate User
+
+
+@enduml

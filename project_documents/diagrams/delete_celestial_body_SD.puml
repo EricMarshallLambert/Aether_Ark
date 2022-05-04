@@ -1,0 +1,13 @@
+@startuml
+
+actor User
+participant Website as "Website Celestial Body Page"
+participant DeleteCelestialBodyActivity
+database DynamoDB
+
+User -> Website : Submit destroy celestial body form
+Website -> DeleteCelestialBodyActivity : send delete celestial body request
+DeleteCelestialBodyActivity -> DynamoDB : delete celestial body
+DynamoDB -> DynamoDB : delete in other tables
+
+@enduml

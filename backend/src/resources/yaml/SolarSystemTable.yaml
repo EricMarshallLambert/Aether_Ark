@@ -1,0 +1,23 @@
+Resources:
+  SolarSystemsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: "SolarSystems"
+      AttributeDefinitions:
+        - AttributeName: "solarSystemId"
+          AttributeType: "S"
+        - AttributeName: "username"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "solarSystemId"
+          KeyType: "HASH"
+      BillingMode: "PAY_PER_REQUEST"
+      GlobalSecondaryIndexes:
+        - IndexName: "GetAllSolarSystemsForUser"
+          KeySchema:
+            - AttributeName: "username"
+              KeyType: "HASH"
+          Projection:
+            ProjectionType: "ALL"
+
+

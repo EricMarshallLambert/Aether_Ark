@@ -1,0 +1,116 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport content=" width=device-width, initial-scale="1.0">
+  <link rel="stylesheet" href="/styles/template copy.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/scripts/solarSystem.js" defer></script>
+  <script src="/components/header.js" defer></script>
+
+  <title>Solar Systems</title>
+  <link rel="icon"
+    href="https://www.kindpng.com/picc/m/107-1076128_transparent-planet-png-planet-vector-png-png-download.png"
+    type="image/x-icon">
+</head>
+
+<body>
+  <header-component></header-component>
+
+  <main>
+
+
+    <section id="solar-system" class="section-card">
+
+      <h1>My Solar Systems </h1>
+      <br>
+      <table id="solar-system-table">
+      </table>
+
+      </br>
+    </section>
+
+
+    <section id="solar-system-edit-area" class="section-card">
+      <h1>Create Solar System</h1>
+
+      <form class="card-content" id="create-solarSystem-form">
+        <label>Solar System Name
+          <input type="text" required class="validated-field" id="solarSystem-name" placeholder="Andromeda" autofocus>
+        </label>
+
+        <input type="submit" id="create" value="Create">
+      </form>
+      <br>
+
+      </br>
+
+      <section id="solar-system-edit-area" class="section-card">
+        <h1>Get 1 Solar System</h1>
+
+        <form class="card-content" id="create-solarSystem-form">
+          <label>Solar System ID
+            <input type="text" required class="validated-field" id="solarSystem-id" placeholder="12345" autofocus>
+          </label>
+
+          <input type="submit" id="Get" value="Retrieve">
+        </form>
+
+        <br>
+
+        </br>
+
+        <section id="solar-system-edit-area" class="section-card">
+          <h1>Delete Solar System</h1>
+
+          <form class="card-content" id="delete-solarSystem-form">
+            <label>Solar System ID
+              <input type="text" required class="validated-field" id="delete-solarSystem-id" placeholder="12345"
+                autofocus>
+            </label>
+
+            <input type="submit" id="Delete" value="Delete">
+          </form>
+
+          <br>
+
+          </br>
+
+
+          <section id="solar-system-edit-area" class="section-card">
+
+
+            <form action=method="put">
+              <h1>Update Solar System</h1>
+
+              Solar System Id:<br>
+              <input type="text" name="username" placeholder="12345">
+              <br>
+              New Solar System Name:<br>
+              <input type="text" name="email_id" placeholder="Ex: Eye of Sauron">
+              <br><br>
+              Update Celestial Body Distance:<br>
+              <input type="text" name="email_id" placeholder="bodyId">
+              <br><br>
+              New Distance From Center:<br>
+              <input type="text" name="email_id" placeholder="Ex: 50">
+              <br><br>
+              Add Celestial Body:<br>
+              <input type="text" name="email_id" placeholder="bodyId">
+              <br><br>
+              Remove Celestial Body:<br>
+              <input type="text" name="email_id" placeholder="bodyId">
+              <br><br>
+
+              <button type="submit" formaction="#">
+                Update Solar System
+              </button>
+            </form>
+
+          </section>
+
+
+
+  </main>
+</body>
+
+
+</html>

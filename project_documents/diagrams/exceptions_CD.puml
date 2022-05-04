@@ -1,0 +1,32 @@
+@startuml
+skinparam backgroundcolor grey
+class InvalidAttributeException {
+- {static} long serialVersionUID
+}
+class InvalidAttributeValueException {
+- {static} long serialVersionUID
+}
+class InvalidAttributeChangeException {
+- {static} long serialVersionUID
+}
+class CelestialBodyNotFoundException{
+- {static} long serialVersionUID
+}
+class SolarSystemNotFoundException{
+- {static} long serialVersionUID
+}
+class UserNotFoundException{
+- {static} long serialVersionUID
+}
+class UserNameAlreadyExistsException{
+- {static} long serialVersionUID
+}
+RuntimeException <|-- UserNotFoundException
+RuntimeException <|-- SolarSystemNotFoundException
+RuntimeException <|-- CelestialBodyNotFoundException
+RuntimeException <|-- UserNameAlreadyExistsException
+RuntimeException <|-- InvalidAttributeException
+
+InvalidAttributeException <|-- InvalidAttributeChangeException
+InvalidAttributeException <|-- InvalidAttributeValueException
+@enduml
