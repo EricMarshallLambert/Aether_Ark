@@ -25,9 +25,8 @@ level of detail to aim for.*
 *List the most important questions you have about your design, or things that
 you are still debating internally that you might like help working through.*
 
-1.   
-2.   
-3.  
+1. Should we make user a separate service? Y 
+2. 
 
 ## 3. Use Cases
 

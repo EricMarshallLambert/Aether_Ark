@@ -13,19 +13,21 @@ separately and then added or removed from a solar system.
 
 1. Do we want to use a "Soft Delete" with isDeleted? We would have to add that to the database models.
 2. Can a data model be composed of other objects? Or do the attributes have to be primitives and Strings?
-3. Should we have user validation?
+3. Should we have user validation? y
 4. Do we want to have a predefined set of planets?
 5. Should users define initial speed and/or distance from solar body?
-6. How to do the front-end part of the program?
-7. How in-depth will the visuals be, and how to implement them?
-8. How will we know the project is full-featured enough?
-9. Whether a user will have a profile to login to Aether Ark (login page & main page: 2 pages)?
-10. Can users create a multiple star system?
-11. Should we have motion?
-12. Do we want to connect to an outside API?
-13. Should we use a DAO interface? Would it have a benefit?
-14. What is our MAX? Distance from sun, mass, diameter, amount of bodies, amount of 
+6. How in-depth will the visuals be, and how to implement them?
+7. How will we know the project is full-featured enough?
+8. Whether a user will have a profile to login to Aether Ark (login page & main page: 2 pages)?
+9. Can users create a multiple star system?
+10. Should we have motion? Y
+11. Do we want to connect to an outside API? Y
+12. Should we use a DAO interface? Would it have a benefit?
+13. What is our MAX? Distance from sun, mass, diameter, amount of bodies, amount of 
 solar systems, bodies in solar systems
+14. Should we make user a separate service? Y
+15. How to access my user service?
+16. User service client?
 
 ## 3. Use Cases
 
