@@ -42,6 +42,7 @@ import javax.inject.Inject;
      *
      * @param getUserRequest request object containing the user ID
      * @return getUserResult result object containing the API defined {@link UserModel}
+     * @throws UserNotFoundException todo
      */
     public GetUserResult handleRequest(final GetUserRequest getUserRequest, Context context)
             throws UserNotFoundException {
