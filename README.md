@@ -1,5 +1,7 @@
 # Aether_Ark
 
+[<img src="project_documents/videos/aeLogo.mp4" width="50%">]()
+
 > This service will allow a user to create their own solar system. The user can input values for each celestial body they want to create, and will be shown a visual representation of the system that they make. Celestial objects will be made separately and then added or removed from a solar system.
 
 
